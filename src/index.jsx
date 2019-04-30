@@ -4,4 +4,4 @@ import React from 'react'
 
 
 const container = document.getElementById('app')
-ReactDOM.render(<App></App>, container)
+ReactDOM.render(<App/>, container)
