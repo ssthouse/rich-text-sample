@@ -9,11 +9,9 @@ ${content}
 </body>
 <script>
   window.addEventListener('message', function (event) {
-    if (event.data.type !== 'cmd') return
-    switch (event.data.cmd) {
-      case "bold":
-        document.execCommand('bold');
-        break;
+    if (event.data.type === 'cmd') {
+      const isItWork = document.execCommand(event.data.cmd, false, event.value);
+      if (!isItWork) console.log(' why it does not work?!');
     }
   });
 </script>
