@@ -10,9 +10,8 @@ export default class IFrame extends Component {
   }
 
   initIframe() {
-    const content = 'test content';
     const iframe = document.getElementById('iframe');
-    iframe.src = "data:text/html;charset=utf-8," + iframeTemplate.replace('${content}', content);
+    iframe.src = "data:text/html;charset=utf-8," + iframeTemplate;
   }
 
   componentDidMount() {
