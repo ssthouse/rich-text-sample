@@ -17,7 +17,7 @@ class RichTextCmd {
     return {
       type: 'cmd',
       cmd: 'fontSize',
-      value: value + '' || '0'
+      value: value + '' || '1'
     }
   }
 }
