@@ -15,7 +15,7 @@ export default class Toolbar extends Component {
       urlValue: ''
     };
 
-      this.onClickBold = this.onClickBold.bind(this);
+    this.onClickBold = this.onClickBold.bind(this);
     this.onClickItalic = this.onClickItalic.bind(this);
     // this.onClickFontSize = this.onClickFontSize.bind(this);
     this.onClickLink = this.onClickLink.bind(this);
@@ -52,12 +52,13 @@ export default class Toolbar extends Component {
   }
 
   onConfirmUrl() {
-    console.log(this.state.urlValue);
+    this.props.onAction(richTextCmd.newLinkCmdMsg('https://baidu.com'));
   }
 
   onInputChange(event) {
-    console.log(`input change~~~~~~~~~~~~~~~~`);
-    console.log(event);
+    this.setState({
+      urlValue: event.target.value
+    });
   }
 
   render() {

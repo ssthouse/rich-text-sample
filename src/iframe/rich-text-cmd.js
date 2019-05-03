@@ -20,6 +20,15 @@ class RichTextCmd {
       value: value + '' || '1'
     }
   }
+
+  newLinkCmdMsg(uri) {
+    return {
+
+      type: 'cmd',
+      cmd: 'createLink',
+      value: uri || ''
+    }
+  }
 }
 
 export default new RichTextCmd();
