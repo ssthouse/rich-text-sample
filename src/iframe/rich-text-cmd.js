@@ -29,6 +29,14 @@ class RichTextCmd {
       value: uri || ''
     }
   }
+
+  newFontNameCmdMsg(fontName) {
+    return {
+      type: 'cmd',
+      cmd: 'fontName',
+      value: fontName || "Arial"
+    }
+  }
 }
 
 export default new RichTextCmd();
