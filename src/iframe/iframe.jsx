@@ -9,6 +9,8 @@ export default class IFrame extends Component {
     super(options);
     this.initWindowListener();
     this.onToolbarAction = this.onToolbarAction.bind(this);
+    this.onClickSave = this.onClickSave.bind(this);
+    this.onClickLoadStorage = this.onClickLoadStorage.bind(this);
   }
 
   initWindowListener() {
@@ -18,9 +20,13 @@ export default class IFrame extends Component {
     })
   }
 
+
+  loadIframeContent(content) {
+    this.getIframe().src = "data:text/html;charset=utf-8," + iframeTemplate.replace('$body', content);
+  }
+
   initIframe() {
-    const iframe = document.getElementById('iframe');
-    iframe.src = "data:text/html;charset=utf-8," + iframeTemplate.replace('$body', '');
+    this.loadIframeContent('');
   }
 
   componentDidMount() {
@@ -28,18 +34,22 @@ export default class IFrame extends Component {
   }
 
   onToolbarAction(cmdEvent) {
-    document.getElementById('iframe').contentWindow.postMessage(cmdEvent, '*');
+    this.getIframe().contentWindow.postMessage(cmdEvent, '*');
   }
 
   onClickSave() {
-    document.getElementById('iframe').contentWindow.postMessage({
+    this.getIframe().contentWindow.postMessage({
       type: 'getContent'
     }, '*');
   }
 
   onClickLoadStorage() {
     const content = localStorage.getItem('iframeContent') || '';
-    document.getElementById('iframe').src = "data:text/html;charset=utf-8," + iframeTemplate.replace('$body', content);
+    this.loadIframeContent(content);
+  }
+
+  getIframe() {
+    return document.getElementById('iframe');
   }
 
   render() {
