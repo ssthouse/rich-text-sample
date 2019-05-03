@@ -34,14 +34,15 @@ export default class Container extends Component {
       <Layout className="main-layout">
         <Header>
           <Menu theme="dark"
+                defaultSelectedKeys={['1']}
                 mode="horizontal"
                 style={{lineHeight: '64px'}}>
-            <Menu.Item key="1" onClick={() => this.onIFrameClick()}>iFrame实现</Menu.Item>
+            <Menu.Item key="1"
+                       onClick={() => this.onIFrameClick()}>iFrame实现</Menu.Item>
             <Menu.Item key="2" onClick={() => this.onJsonClick()}>JSON自定义实现</Menu.Item>
           </Menu>
         </Header>
-        <Content className="content-panel"
-                 style={{padding: '0 50px'}}>
+        <Content className="content-panel">
           {
             this.state.selectedTab === 'iframe' ? <IFrame/> : <JsonRich/>
           }
