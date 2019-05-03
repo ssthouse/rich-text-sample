@@ -5,6 +5,7 @@
   <title>Rich text</title>
 </head>
 <body contenteditable="true">
+$body
 </body>
 <script>
   window.addEventListener('message', function (event) {
@@ -12,6 +13,14 @@
     if (data.type === 'cmd') {
       const isItWork = document.execCommand(data.cmd, false, data.value);
       if (!isItWork) console.log(' why it does not work?!');
+      return;
+    }
+
+    if (data.type === 'getContent') {
+      console.log(window.parent);
+      window.parent.postMessage({
+        content: document.body.innerHTML
+      }, '*');
     }
   });
 </script>
