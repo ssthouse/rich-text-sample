@@ -15,14 +15,15 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: [{ loader: "html-loader" }]
+        use: [{ loader: "html-loader" }],
+        exclude:/template\.html$/
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.html$/,
+        test: /template\.html$/,
         use: ['raw-loader']
       }
     ]
