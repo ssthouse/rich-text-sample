@@ -1,0 +1,47 @@
+{
+  "name": "rich-text-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server",
+    "build": "webpack --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssthouse/rich-text-sample.git"
+  },
+  "keywords": [
+    "rich-text"
+  ],
+  "author": "ssthouse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssthouse/rich-text-sample/issues"
+  },
+  "homepage": "https://github.com/ssthouse/rich-text-sample#readme",
+  "dependencies": {
+    "antd": "^3.16.6",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^4.0.0-beta.5",
+    "immutable": "^4.0.0-rc.12",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "slate": "^0.45.0",
+    "slate-react": "^0.21.20"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "raw-loader": "^2.0.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
+  }
+}
